@@ -1,0 +1,23 @@
+const int analogin=A0;
+const int analogout=9;
+int sensorvalue=0;
+int outputvalue=0;
+ 
+void setup() {
+  Serial.begin(9600);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  sensorvalue=analogRead(analogin);
+  outputvalue=map(sensorvalue,0,1023,0,255);
+  analogWrite(analogout,outputvalue);
+  Serial.println(sensorvalue);
+  Serial.println(outputvalue);
+  
+  delay(2);
+  
+  // put your main code here, to run repeatedly:
+
+}
